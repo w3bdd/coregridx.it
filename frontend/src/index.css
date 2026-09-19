@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 222 32% 4%;
+        --foreground: 210 40% 98%;
+        --card: 220 30% 8%;
+        --card-foreground: 210 40% 98%;
+        --popover: 220 30% 8%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 184 100% 50%;
+        --primary-foreground: 222 47% 5%;
+        --secondary: 220 25% 12%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 220 25% 12%;
+        --muted-foreground: 215 20% 65%;
+        --accent: 220 25% 14%;
+        --accent-foreground: 184 100% 50%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 220 20% 16%;
+        --input: 220 20% 16%;
+        --ring: 184 100% 50%;
+        --radius: 0.25rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html {
+        scroll-behavior: auto;
+    }
+    body {
+        @apply bg-void text-slate-200 font-body antialiased;
+        font-feature-settings: "ss01", "cv11";
+    }
+    ::selection {
+        background: rgba(0, 240, 255, 0.25);
+        color: #F8FAFC;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #07090E;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #1E293B;
+        border: 2px solid #07090E;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #00F0FF;
+    }
+}
+
+@layer utilities {
+    .bg-blueprint {
+        background-image:
+            linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+        background-size: 56px 56px;
+    }
+    .bg-blueprint-fine {
+        background-image:
+            linear-gradient(rgba(148, 163, 184, 0.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(148, 163, 184, 0.035) 1px, transparent 1px);
+        background-size: 28px 28px;
+    }
+    .text-glow {
+        text-shadow: 0 0 24px rgba(0, 240, 255, 0.45);
+    }
+    .card-glow:hover {
+        box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.35), 0 8px 40px -8px rgba(0, 240, 255, 0.15);
+    }
+    .mask-fade-b {
+        -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+        mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}

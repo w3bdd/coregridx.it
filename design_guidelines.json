@@ -1,0 +1,200 @@
+{
+  "project_identity": {
+    "name": "CoreGridX Technologies",
+    "tagline": "Architecting High-Resilience IT Infrastructure for Scale",
+    "app_type": "marketing_site",
+    "target_audience": "Enterprise & Multi-site Tech Leaders, CIOs, CTOs, IT Directors, Network Architecture Teams",
+    "brand_archetype": "The Performance Pro & Swiss Engineering Precision",
+    "tone": "Modern, technical, precise, engineering-led, restrained, zero hyperbole"
+  },
+  "design_archetype": {
+    "primary": "Dark Enterprise Architectural Minimal",
+    "secondary": "Technical Swiss Grid & Cyber Topology Visuals",
+    "surface_strategy": "Grid Borders + Tracing Glow Beam + Optical Crystal Glass (Header/Floating UI)",
+    "aesthetic_rules": [
+      "No full-screen blurry standard SaaS gradients. Colors exist as functional telemetry indicators (cyan for active nodes, emerald for health, amber for load/alert).",
+      "Strict grid alignment with sub-pixel 1px borders (border-white/10) exposed like technical architectural blueprints.",
+      "Asymmetric Bento grid hierarchy with explicit cell spans (col-span-8, col-span-4, col-span-12).",
+      "Monospace telemetry metadata callouts (e.g., [LATENCY: 0.4ms], [SLA: 99.999%], [NODES: 4,820]).",
+      "Every interactive element MUST have hover/active states with high contrast text explicitly set."
+    ]
+  },
+  "typography": {
+    "headline_font": "Outfit, sans-serif",
+    "body_font": "Plus Jakarta Sans, sans-serif",
+    "mono_font": "JetBrains Mono, monospace",
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap",
+    "scale": {
+      "h1_hero": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08]",
+      "h2_section": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight leading-[1.15]",
+      "h3_card": "text-xl sm:text-2xl font-semibold tracking-tight",
+      "h4_sub": "text-lg sm:text-xl font-medium",
+      "body_lead": "text-lg sm:text-xl text-slate-300 leading-relaxed font-normal",
+      "body_main": "text-base text-slate-400 leading-relaxed",
+      "body_sm": "text-sm text-slate-400",
+      "caption_mono": "font-mono text-xs uppercase tracking-[0.2em] text-cyan-400"
+    }
+  },
+  "colors": {
+    "mode": "dark",
+    "base": {
+      "bg_void": "#07090E",
+      "bg_card": "#0F131C",
+      "bg_card_hover": "#161C2A",
+      "bg_surface": "#121723",
+      "border_dim": "rgba(255, 255, 255, 0.08)",
+      "border_bright": "rgba(0, 240, 255, 0.3)"
+    },
+    "text": {
+      "primary": "#F8FAFC",
+      "secondary": "#94A3B8",
+      "muted": "#64748B",
+      "accent_cyan": "#00F0FF",
+      "accent_emerald": "#00E676"
+    },
+    "brand_accents": {
+      "primary_cyan": "#00F0FF",
+      "secondary_blue": "#0284C7",
+      "status_green": "#00E676",
+      "alert_amber": "#FFB800",
+      "glow_cyan": "rgba(0, 240, 255, 0.15)",
+      "glow_blue": "rgba(2, 132, 199, 0.2)"
+    }
+  },
+  "motion_and_effects": {
+    "smooth_scroll": "Lenis smooth scroll enabled globally for luxury fluid weight",
+    "hero_entry": "Signature kinetic on-load moment: staggered line-by-line reveal with initial micro grid scan effect",
+    "scroll_reveal": "Framer motion fade-up with spring physics (stiffness: 100, damping: 20)",
+    "micro_interactions": [
+      "Button pulse beam border effect on hover",
+      "Topology node hover tooltip elevation",
+      "Interactive slider smooth value interpolation",
+      "Card hover subtle 3D tilt (-2deg to 2deg) & border glow transition"
+    ]
+  },
+  "pages_and_navigation": {
+    "routes": [
+      {
+        "path": "/",
+        "name": "Home",
+        "description": "Hero topology canvas, kinetic reveal, value metrics, service matrix, architecture calculator, numbered manifesto chapters, interactive multi-site infrastructure topology, capability statement download callout, qualified quote CTA"
+      },
+      {
+        "path": "/about",
+        "name": "About",
+        "description": "Company origin, engineering principles, leadership team, certifications, compliance standards (SOC2, ISO27001, HIPAA, PCI-DSS), global datacenter reach"
+      },
+      {
+        "path": "/services",
+        "name": "Services",
+        "description": "Deep-dive 5 core practice areas: Server & Computing, Network & Connectivity, Data Center & Physical Infra, Security & Resilience, Managed Infrastructure"
+      },
+      {
+        "path": "/solutions",
+        "name": "Solutions by Scale",
+        "description": "Tailored infrastructure patterns for Small Business, Business & SME, Enterprise, and Multi-Site distributed operations"
+      },
+      {
+        "path": "/industries",
+        "name": "Industries",
+        "description": "Specialized architecture for Financial Tech, Healthcare, Defense/Government, High-Growth SaaS, Retail & Logistics"
+      },
+      {
+        "path": "/approach",
+        "name": "Engineering Lifecycle",
+        "description": "7-Stage Methodology interactive flow: Assess -> Design -> Deploy -> Secure -> Document -> Manage -> Optimize"
+      },
+      {
+        "path": "/technology",
+        "name": "Tech Stack & Ecosystem",
+        "description": "Hardware, Cloud Hybrid, Fiber, Cisco, Juniper, Arista, Dell Enterprise, VMware, Kubernetes, Palo Alto, AWS DirectConnect partner matrix"
+      },
+      {
+        "path": "/work-with-us",
+        "name": "Work With Us",
+        "description": "Combined Careers (open engineering positions) + Channel & Vendor Partnership portal"
+      },
+      {
+        "path": "/contact",
+        "name": "Contact & Quote",
+        "description": "3 distinct operational forms: 1) Primary Qualified Request a Quote Form (Multi-step qualification), 2) General Contact Form, 3) Consultation Booking Form"
+      }
+    ]
+  },
+  "interactive_components": [
+    {
+      "name": "Interactive Network Topology Canvas",
+      "type": "Canvas / Three.js interactive 3D node viewer",
+      "purpose": "Hero background and dedicated explorer for visualizing server racks, multi-site node interconnectivity, latency, and failover pathways",
+      "location": "Home page Hero & Approach section"
+    },
+    {
+      "name": "Multi-Step Infrastructure Quote Calculator & Qualifier",
+      "type": "Form / Estimator Widget",
+      "purpose": "Allows enterprise buyers to select Org Type, Site Count (1-50+), User Count, Current Environment (On-Prem, Cloud, Hybrid), Project Goal, Budget range, and receive instant architectural scope preview while submitting lead",
+      "location": "Contact Page & Modal Drawer on all pages"
+    },
+    {
+      "name": "Infrastructure Cost & Uptime Calculator",
+      "type": "Interactive Slider Tool",
+      "purpose": "Calculates estimated downtime risk reduction ($/hr saved) based on infrastructure resilience tier",
+      "location": "Services and Home page"
+    },
+    {
+      "name": "Interactive Lifecycle Stage Inspector",
+      "type": "Step-by-Step Interactive Diagram",
+      "purpose": "Walks through Assess, Design, Deploy, Secure, Document, Manage, Optimize with deliverables per step",
+      "location": "Approach Page"
+    },
+    {
+      "name": "Capability Statement PDF Download Trigger",
+      "type": "Modal / Direct Action",
+      "purpose": "Allows enterprise buyers to instantly preview and download the CoreGridX Capability Statement PDF sheet",
+      "location": "Header CTA & Home/About pages"
+    }
+  ],
+  "image_urls": {
+    "server_datacenter_hero": "https://images.unsplash.com/photo-1785682231847-93265d8e633d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6ODl8MHwxfHNlYXJjaHwxfHxkYXRhY2VudGVyJTIwc2VydmVyJTIwcm9vbSUyMGZpYmVyJTIwb3B0aWNzJTIwbmV0d29yayUyMGVuZ2luZWVyaW5nfGVufDB8fHx8MTc4OTgyNjQ4OHww&ixlib=rb-4.1.0&q=85",
+    "fiber_optics_detail": "https://images.pexels.com/photos/4864249/pexels-photo-4864249.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "technician_server_rack": "https://images.unsplash.com/photo-1785682117346-4b114502e9b8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6ODl8MHwxfHNlYXJjaHwyfHxkYXRhY2VudGVyJTIwc2VydmVyJTIwcm9vbSUyMGZpYmVyJTIwb3B0aWNzJTIwbmV0d29yayUyMGVuZ2luZWVyaW5nfGVufDB8fHx8MTc4OTgyNjQ4OHww&ixlib=rb-4.1.0&q=85",
+    "neat_patch_cabling": "https://images.unsplash.com/photo-1744868562210-fffb7fa882d9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6ODl8MHwxfHNlYXJjaHwzfHxkYXRhY2VudGVyJTIwc2VydmVyJTIwcm9vbSUyMGZpYmVyJTIwb3B0aWNzJTIwbmV0d29yayUyMGVuZ2luZWVyaW5nfGVufDB8fHx8MTc4OTgyNjQ4OHww&ixlib=rb-4.1.0&q=85",
+    "female_engineer_datacenter": "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "noc_control_room": "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "blue_control_center": "https://images.unsplash.com/photo-1782945217386-300f33f22069?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjd8MHwxfHNlYXJjaHwxfHxjeWJlcnNlY3VyaXR5JTIwY29udHJvbCUyMHJvb20lMjBuZXR3b3JrJTIwb3BlcmF0aW9ucyUyMGNlbnRlciUyMGVuZ2luZWVyaW5nfGVufDB8fHx8MTc4OTgyNjQ5Nnww&ixlib=rb-4.1.0&q=85"
+  },
+  "testing_and_accessibility": {
+    "data_testid_rules": "All interactive elements (buttons, nav links, form inputs, tab buttons, modal triggers, sliders, quote submit buttons) MUST include precise data-testid attributes in kebab-case format.",
+    "required_test_ids": [
+      "nav-home-link",
+      "nav-about-link",
+      "nav-services-link",
+      "nav-solutions-link",
+      "nav-industries-link",
+      "nav-approach-link",
+      "nav-technology-link",
+      "nav-careers-link",
+      "nav-contact-link",
+      "cta-request-quote-button",
+      "cta-request-consultation-button",
+      "cta-download-capability-pdf",
+      "quote-form-step-1",
+      "quote-form-step-2",
+      "quote-form-submit-button",
+      "contact-form-submit-button",
+      "consultation-form-submit-button",
+      "topology-node-filter",
+      "uptime-calculator-slider",
+      "capability-pdf-modal-close"
+    ]
+  },
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You tend to converge toward generic outputs. In frontend design, avoid AI slop: build sharp, high-precision frontends.",
+    "Dark colors look good when used independently with crisp 1px borders. DO NOT use muddy dark gradients.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) for sticky header and modal dialogs.",
+    "Expose grid borders using Tailwind border-white/10 to convey blueprints and infrastructure schemas.",
+    "Do NOT center align the main app container. Maintain strict technical left alignment.",
+    "Ensure high contrast on hover states. Never rely on default font color inheritance.",
+    "All interactive elements MUST include data-testid attributes.",
+    "Always test forms with interactive state changes, step indicator progress, toast feedback via Sonner."
+  ]
+}
