@@ -45,7 +45,7 @@ const UptimeCalculator = () => {
               value={hourly}
               onChange={(e) => setHourly(Number(e.target.value))}
               data-testid="uptime-calculator-slider"
-              className="w-full mt-4 accent-[#00F0FF]"
+              className="w-full mt-4 accent-signal"
             />
             <div className="mt-8 font-mono text-xs uppercase tracking-[0.2em] text-slate-500 mb-3">Resilience tier</div>
             <div className="grid sm:grid-cols-3 gap-2">

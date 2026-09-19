@@ -34,6 +34,9 @@ marquee, framer-motion, lenis smooth scroll, parallax).
 - Downloadable capability statement PDF generated server-side
 - SEO basics: title, meta description, Organization JSON-LD
 - Full data-testid coverage on interactive elements
+- Light/dark theme toggle (sun/moon in header): entire palette runs on CSS variables
+  (--c-* tokens incl. slate scale + white), `.light` class on <html> flips them; choice persists
+  via localStorage with a pre-render script in index.html (no flash); topology canvas is theme-aware
 
 ## Verification Done
 - curl: /api/health, all 3 lead endpoints (200), honeypot silent-accept + not stored, 422 validation, PDF 200 (valid %PDF)

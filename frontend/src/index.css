@@ -26,6 +26,58 @@
         --input: 220 20% 16%;
         --ring: 184 100% 50%;
         --radius: 0.25rem;
+        --c-void: 7 9 14;
+        --c-panel: 15 19 28;
+        --c-panelhover: 22 28 42;
+        --c-surface: 18 23 35;
+        --c-signal: 0 240 255;
+        --c-pulse: 0 230 118;
+        --c-warn: 255 184 0;
+        --c-white: 255 255 255;
+        --c-slate-50: 248 250 252;
+        --c-slate-100: 241 245 249;
+        --c-slate-200: 226 232 240;
+        --c-slate-300: 203 213 225;
+        --c-slate-400: 148 163 184;
+        --c-slate-500: 100 116 139;
+        --c-slate-600: 71 85 105;
+        --c-slate-700: 51 65 85;
+        --c-slate-800: 30 41 59;
+        --c-slate-900: 15 23 42;
+    }
+    .light {
+        --c-void: 244 247 251;
+        --c-panel: 255 255 255;
+        --c-panelhover: 233 240 248;
+        --c-surface: 236 242 249;
+        --c-signal: 2 132 199;
+        --c-pulse: 4 120 87;
+        --c-warn: 180 83 9;
+        --c-white: 15 23 42;
+        --c-slate-50: 15 23 42;
+        --c-slate-100: 30 41 59;
+        --c-slate-200: 51 65 85;
+        --c-slate-300: 71 85 105;
+        --c-slate-400: 100 116 139;
+        --c-slate-500: 100 116 139;
+        --c-slate-600: 148 163 184;
+        --c-slate-700: 203 213 225;
+        --c-slate-800: 226 232 240;
+        --c-slate-900: 241 245 249;
+    }
+    .light ::selection {
+        background: rgba(2, 132, 199, 0.22);
+        color: #0F172A;
+    }
+    .light ::-webkit-scrollbar-track {
+        background: #F4F7FB;
+    }
+    .light ::-webkit-scrollbar-thumb {
+        background: #C3CEDC;
+        border-color: #F4F7FB;
+    }
+    .light ::-webkit-scrollbar-thumb:hover {
+        background: #0284C7;
     }
 }
 
@@ -114,4 +166,21 @@
         border-top-color: inherit;
         border-bottom-color: inherit;
     }
+}
+
+.light .bg-blueprint {
+    background-image:
+        linear-gradient(rgba(15, 23, 42, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.06) 1px, transparent 1px);
+}
+.light .bg-blueprint-fine {
+    background-image:
+        linear-gradient(rgba(15, 23, 42, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
+}
+.light .card-glow:hover {
+    box-shadow: 0 0 0 1px rgba(2, 132, 199, 0.45), 0 10px 44px -10px rgba(2, 132, 199, 0.25);
+}
+.light .text-glow {
+    text-shadow: 0 0 22px rgba(2, 132, 199, 0.35);
 }

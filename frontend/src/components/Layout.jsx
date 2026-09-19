@@ -1,8 +1,32 @@
 import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { Grid2x2, Menu, X, ArrowUpRight, Phone, Mail, FileDown } from "lucide-react";
+import { Grid2x2, Menu, X, ArrowUpRight, Phone, Mail, FileDown, Sun, Moon } from "lucide-react";
 import { CONTACT } from "@/lib/api";
+
+const ThemeToggle = () => {
+  const [light, setLight] = useState(
+    () => typeof document !== "undefined" && document.documentElement.classList.contains("light")
+  );
+  const toggle = () => {
+    const next = !light;
+    setLight(next);
+    document.documentElement.classList.toggle("light", next);
+    try {
+      localStorage.setItem("cgx-theme", next ? "light" : "dark");
+    } catch (e) {}
+  };
+  return (
+    <button
+      onClick={toggle}
+      data-testid="theme-toggle-button"
+      aria-label={light ? "Switch to dark mode" : "Switch to light mode"}
+      className="w-9 h-9 border border-white/10 flex items-center justify-center text-slate-300 hover:text-signal hover:border-signal/50 transition-colors"
+    >
+      {light ? <Moon size={15} /> : <Sun size={15} />}
+    </button>
+  );
+};
 
 const NAV = [
   { to: "/services", label: "Services", id: "nav-services-link" },
@@ -48,6 +72,7 @@ const Header = () => {
           ))}
         </nav>
         <div className="flex items-center gap-3">
+          <ThemeToggle />
           <button
             data-testid="cta-request-quote-button"
             onClick={() => navigate("/contact?tab=quote")}

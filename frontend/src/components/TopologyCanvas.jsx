@@ -67,6 +67,12 @@ const TopologyCanvas = ({ className = "" }) => {
     };
 
     const tick = (time) => {
+      const light = document.documentElement.classList.contains("light");
+      const linkColor = light ? "rgba(15, 23, 42, 0.10)" : "rgba(148, 163, 184, 0.10)";
+      const pulseCore = light ? "rgba(2, 132, 199, 0.9)" : "rgba(0, 240, 255, 0.85)";
+      const pulseHalo = light ? "rgba(2, 132, 199, 0.14)" : "rgba(0, 240, 255, 0.12)";
+      const nodeHot = (tw) => light ? `rgba(2, 132, 199, ${tw})` : `rgba(0, 240, 255, ${tw})`;
+      const nodeDim = (a) => light ? `rgba(71, 85, 105, ${a})` : `rgba(148, 163, 184, ${a})`;
       ctx.clearRect(0, 0, w, h);
       const px = (mouse.x - 0.5) * 26;
       const py = (mouse.y - 0.5) * 18;
@@ -77,7 +83,7 @@ const TopologyCanvas = ({ className = "" }) => {
       links.forEach(([i, j]) => {
         const a = nodes[i];
         const b = nodes[j];
-        ctx.strokeStyle = "rgba(148, 163, 184, 0.10)";
+        ctx.strokeStyle = linkColor;
         ctx.beginPath();
         ctx.moveTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
@@ -91,11 +97,11 @@ const TopologyCanvas = ({ className = "" }) => {
         const b = nodes[p.l[1]];
         const x = a.x + (b.x - a.x) * p.t;
         const y = a.y + (b.y - a.y) * p.t;
-        ctx.fillStyle = "rgba(0, 240, 255, 0.85)";
+        ctx.fillStyle = pulseCore;
         ctx.beginPath();
         ctx.arc(x, y, 1.6, 0, Math.PI * 2);
         ctx.fill();
-        ctx.fillStyle = "rgba(0, 240, 255, 0.12)";
+        ctx.fillStyle = pulseHalo;
         ctx.beginPath();
         ctx.arc(x, y, 6, 0, Math.PI * 2);
         ctx.fill();
@@ -104,12 +110,12 @@ const TopologyCanvas = ({ className = "" }) => {
       nodes.forEach((n) => {
         const tw = 0.45 + 0.55 * Math.abs(Math.sin(time * 0.0008 + n.phase));
         if (n.hot) {
-          ctx.fillStyle = `rgba(0, 240, 255, ${0.5 * tw})`;
+          ctx.fillStyle = nodeHot(0.5 * tw);
           ctx.beginPath();
           ctx.arc(n.x, n.y, n.r + 5, 0, Math.PI * 2);
           ctx.fill();
         }
-        ctx.fillStyle = n.hot ? `rgba(0, 240, 255, ${tw})` : `rgba(148, 163, 184, ${0.35 * tw + 0.15})`;
+        ctx.fillStyle = n.hot ? nodeHot(tw) : nodeDim(0.35 * tw + 0.15);
         ctx.beginPath();
         ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
         ctx.fill();
