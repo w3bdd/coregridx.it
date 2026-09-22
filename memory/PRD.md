@@ -41,6 +41,10 @@ marquee, framer-motion, lenis smooth scroll, parallax).
   with clipped cyan corner marks + mono caption bars; placements: Home field-spotlight section,
   all 5 Services practice areas (per-service matched shots), About hero band, Work With Us
   careers + partnerships. Registry in src/lib/content.js (IMAGES)
+- Second imagery pass: Home Solutions-by-Scale cards now carry per-tier photos (patch panel /
+  fiber / rack switch); wide editorial image bands added to Solutions (server chassis),
+  Industries (rack switch), Technology (Linux terminal), Approach (engineering blueprints).
+  All candidate photos content-verified via image analysis before placement
 
 ## Verification Done
 - curl: /api/health, all 3 lead endpoints (200), honeypot silent-accept + not stored, 422 validation, PDF 200 (valid %PDF)

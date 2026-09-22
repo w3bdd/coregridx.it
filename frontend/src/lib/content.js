@@ -8,6 +8,12 @@ export const IMAGES = {
   nocRoom: "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=1200",
   engineerMonitors: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&auto=format&fit=crop",
   networkGlobe: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
+  patchPanel: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1200&auto=format&fit=crop",
+  fiberDetail: "https://images.pexels.com/photos/4864249/pexels-photo-4864249.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  rackSwitch: "https://images.unsplash.com/photo-1520869562399-e772f042f422?q=80&w=1600&auto=format&fit=crop",
+  chassisRear: "https://images.unsplash.com/photo-1484557052118-f32bd25b45b5?q=80&w=1600&auto=format&fit=crop",
+  blueprintDesk: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=1600&auto=format&fit=crop",
+  terminalSudo: "https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=1600&auto=format&fit=crop",
 };
 
 export const SERVICES = [
@@ -103,6 +109,7 @@ export const SOLUTIONS = [
     code: "SB",
     title: "Small Business",
     range: "1 site / up to ~50 users",
+    image: "patchPanel",
     blurb:
       "Foundational infrastructure done right the first time — a server room that isn't a closet of surprises, and a network that doesn't need rebooting.",
     points: [
@@ -115,6 +122,7 @@ export const SOLUTIONS = [
     code: "SME",
     title: "Business & SME",
     range: "1–5 sites / 50–250 users",
+    image: "fiberDetail",
     blurb:
       "Growing organizations that have outgrown ad-hoc IT. We bring structure: standardized builds, segmented networks, and managed environments.",
     points: [
@@ -127,6 +135,7 @@ export const SOLUTIONS = [
     code: "ENT",
     title: "Enterprise & Multi-Site",
     range: "5+ sites / 250+ users",
+    image: "rackSwitch",
     blurb:
       "Distributed operations that need engineering rigor — lifecycle planning, resilient WAN design, and delivery processes that survive audits.",
     points: [

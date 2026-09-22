@@ -260,6 +260,13 @@ const Home = () => {
             {SOLUTIONS.map((s, i) => (
               <Reveal key={s.code} delay={i * 0.07}>
                 <div className="bg-void p-8 h-full flex flex-col hover:bg-panel transition-colors" data-testid={`home-solution-${s.code.toLowerCase()}`}>
+                  <FramedImage
+                    src={IMAGES[s.image]}
+                    alt={s.title}
+                    ratio="aspect-[16/8]"
+                    className="mb-7"
+                    testid={`home-solution-image-${s.code.toLowerCase()}`}
+                  />
                   <div className="font-mono text-4xl font-bold text-signal/25">{s.code}</div>
                   <h3 className="mt-5 font-display text-xl font-semibold text-slate-100">{s.title}</h3>
                   <div className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-signal/70">{s.range}</div>

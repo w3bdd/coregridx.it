@@ -1,6 +1,7 @@
 import CTASection from "@/components/CTASection";
+import FramedImage from "@/components/FramedImage";
 import { Reveal, Eyebrow, MaskLine } from "@/components/Reveal";
-import { TECH_AREAS } from "@/lib/content";
+import { TECH_AREAS, IMAGES } from "@/lib/content";
 
 const Technology = () => (
   <div data-testid="technology-page">
@@ -16,6 +17,20 @@ const Technology = () => (
             The platforms and ecosystems we work in day to day. Familiarity here reflects hands-on project
             experience — vendor names indicate ecosystem experience, not partnership or certification claims.
           </p>
+        </Reveal>
+      </div>
+    </section>
+
+    <section className="border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16">
+        <Reveal>
+          <FramedImage
+            src={IMAGES.terminalSudo}
+            alt="Linux terminal on an engineering workstation"
+            caption="[ Working-Level Fluency, Honestly Stated ]"
+            ratio="aspect-[21/9]"
+            testid="technology-band-image"
+          />
         </Reveal>
       </div>
     </section>

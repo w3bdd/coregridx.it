@@ -1,6 +1,7 @@
 import CTASection from "@/components/CTASection";
+import FramedImage from "@/components/FramedImage";
 import { Reveal, Eyebrow, MaskLine } from "@/components/Reveal";
-import { INDUSTRIES } from "@/lib/content";
+import { INDUSTRIES, IMAGES } from "@/lib/content";
 
 const Industries = () => (
   <div data-testid="industries-page">
@@ -16,6 +17,20 @@ const Industries = () => (
             Infrastructure requirements shift by sector — compliance scope, uptime tolerance, physical environment.
             We design for the context, not just the spec sheet.
           </p>
+        </Reveal>
+      </div>
+    </section>
+
+    <section className="border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16">
+        <Reveal>
+          <FramedImage
+            src={IMAGES.rackSwitch}
+            alt="Rack-mounted network switch with active Ethernet and fiber connections"
+            caption="[ Every Sector Runs on This Layer ]"
+            ratio="aspect-[21/9]"
+            testid="industries-band-image"
+          />
         </Reveal>
       </div>
     </section>

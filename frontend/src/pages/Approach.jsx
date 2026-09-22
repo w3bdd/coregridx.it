@@ -2,8 +2,9 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import CTASection from "@/components/CTASection";
+import FramedImage from "@/components/FramedImage";
 import { Reveal, Eyebrow, MaskLine } from "@/components/Reveal";
-import { STAGES } from "@/lib/content";
+import { STAGES, IMAGES } from "@/lib/content";
 
 const Approach = () => {
   const [active, setActive] = useState(0);
@@ -23,6 +24,20 @@ const Approach = () => {
               Every engagement — from a single firewall replacement to a multi-site deployment program —
               moves through the same disciplined lifecycle. That structure is the product.
             </p>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16">
+          <Reveal>
+            <FramedImage
+              src={IMAGES.blueprintDesk}
+              alt="Engineering blueprints and precision tools on a design workbench"
+              caption="[ Designed on Paper Before It Is Built in Metal ]"
+              ratio="aspect-[21/9]"
+              testid="approach-band-image"
+            />
           </Reveal>
         </div>
       </section>

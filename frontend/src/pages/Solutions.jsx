@@ -1,6 +1,7 @@
 import CTASection from "@/components/CTASection";
+import FramedImage from "@/components/FramedImage";
 import { Reveal, Eyebrow, MaskLine } from "@/components/Reveal";
-import { SOLUTIONS } from "@/lib/content";
+import { SOLUTIONS, IMAGES } from "@/lib/content";
 import { Check } from "lucide-react";
 
 const Solutions = () => (
@@ -17,6 +18,20 @@ const Solutions = () => (
             A ten-person firm and a ten-site enterprise do not need the same answer. We design for the organization you are —
             and the one you are becoming.
           </p>
+        </Reveal>
+      </div>
+    </section>
+
+    <section className="border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 py-16">
+        <Reveal>
+          <FramedImage
+            src={IMAGES.chassisRear}
+            alt="Rear of an enterprise server chassis with redundant fans and power supplies"
+            caption="[ Redundancy Is a Design Decision ]"
+            ratio="aspect-[21/9]"
+            testid="solutions-band-image"
+          />
         </Reveal>
       </div>
     </section>
