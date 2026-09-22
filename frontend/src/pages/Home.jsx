@@ -6,8 +6,9 @@ import TopologyCanvas from "@/components/TopologyCanvas";
 import Marquee from "@/components/Marquee";
 import UptimeCalculator from "@/components/UptimeCalculator";
 import CTASection from "@/components/CTASection";
+import FramedImage from "@/components/FramedImage";
 import { Reveal, MaskLine, Eyebrow } from "@/components/Reveal";
-import { SERVICES, SOLUTIONS, INDUSTRIES } from "@/lib/content";
+import { SERVICES, SOLUTIONS, INDUSTRIES, IMAGES } from "@/lib/content";
 
 const ICONS = { Server, Network, HardDrive, ShieldCheck, Activity };
 
@@ -161,6 +162,36 @@ const Home = () => {
             ))}
             <div className="border-t border-white/10" />
           </div>
+        </div>
+      </section>
+
+      {/* FIELD SPOTLIGHT */}
+      <section className="border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 py-24 grid lg:grid-cols-12 gap-12 items-center">
+          <Reveal className="lg:col-span-6">
+            <FramedImage
+              src={IMAGES.datacenterAisle}
+              alt="Data center aisle lined with server racks"
+              caption="[ Field Standard — Every Rack Mapped, Every Cable Labeled ]"
+              ratio="aspect-[16/10]"
+              testid="home-spotlight-image"
+            />
+          </Reveal>
+          <Reveal delay={0.1} className="lg:col-span-6">
+            <Eyebrow>On Site</Eyebrow>
+            <h2 className="mt-5 font-display text-3xl sm:text-4xl font-bold tracking-tight text-slate-50 leading-[1.12]">
+              Engineering you can inspect.
+            </h2>
+            <p className="mt-5 text-slate-400 leading-relaxed">
+              Our work is meant to be audited. Walk into a room we built and you can trace every run,
+              read every label, and understand every design decision from the documentation alone.
+            </p>
+            <div className="mt-7 space-y-3 font-mono text-xs uppercase tracking-[0.18em] text-slate-500">
+              <div className="flex items-center gap-3"><span className="text-signal">▸</span> As-built diagrams delivered with every project</div>
+              <div className="flex items-center gap-3"><span className="text-signal">▸</span> Labeling standard across racks, panels, and runs</div>
+              <div className="flex items-center gap-3"><span className="text-signal">▸</span> Asset and warranty register kept current</div>
+            </div>
+          </Reveal>
         </div>
       </section>
 

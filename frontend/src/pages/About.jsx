@@ -1,6 +1,8 @@
 import { Target, Eye, Compass, Check } from "lucide-react";
 import CTASection from "@/components/CTASection";
+import FramedImage from "@/components/FramedImage";
 import { Reveal, Eyebrow, MaskLine } from "@/components/Reveal";
+import { IMAGES } from "@/lib/content";
 
 const VALUES = [
   { icon: Target, title: "Precision over volume", body: "We take fewer engagements and scope them properly. A well-defined project beats a busy pipeline." },
@@ -30,6 +32,20 @@ const About = () => (
             CoreGridX Technologies was founded on a simple observation: most infrastructure problems are not
             technology problems — they are discipline problems. We built a company around fixing that.
           </p>
+        </Reveal>
+      </div>
+    </section>
+
+    <section className="border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 py-20">
+        <Reveal>
+          <FramedImage
+            src={IMAGES.darkRacks}
+            alt="Infrastructure engineer working inside a data center"
+            caption="[ Built by Engineers — Documented for the Next One ]"
+            ratio="aspect-[21/9]"
+            testid="about-hero-image"
+          />
         </Reveal>
       </div>
     </section>

@@ -1,7 +1,8 @@
 import { Mail, Briefcase, Handshake, ArrowUpRight } from "lucide-react";
 import CTASection from "@/components/CTASection";
+import FramedImage from "@/components/FramedImage";
 import { Reveal, Eyebrow, MaskLine } from "@/components/Reveal";
-import { OPEN_ROLES } from "@/lib/content";
+import { OPEN_ROLES, IMAGES } from "@/lib/content";
 import { CONTACT } from "@/lib/api";
 
 const PARTNER_TYPES = [
@@ -34,12 +35,23 @@ const WorkWithUs = () => (
           <span className="w-11 h-11 border border-white/15 flex items-center justify-center text-signal"><Briefcase size={20} strokeWidth={1.6} /></span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-slate-50">Careers</h2>
         </Reveal>
-        <Reveal delay={0.08}>
-          <p className="mt-5 text-slate-400 max-w-2xl leading-relaxed">
-            We hire for documentation habits and troubleshooting discipline over certification bingo.
-            If you take pride in handovers another engineer can pick up cold, you will fit here.
-          </p>
-        </Reveal>
+        <div className="mt-8 grid lg:grid-cols-12 gap-10 items-center">
+          <Reveal delay={0.08} className="lg:col-span-7">
+            <p className="text-slate-400 max-w-2xl leading-relaxed">
+              We hire for documentation habits and troubleshooting discipline over certification bingo.
+              If you take pride in handovers another engineer can pick up cold, you will fit here.
+            </p>
+          </Reveal>
+          <Reveal delay={0.15} className="lg:col-span-5">
+            <FramedImage
+              src={IMAGES.engineerMonitors}
+              alt="Engineer reviewing infrastructure on dual monitors"
+              caption="[ Engineers, Not Ticket-Closers ]"
+              ratio="aspect-[16/9]"
+              testid="careers-image"
+            />
+          </Reveal>
+        </div>
         <div className="mt-12 space-y-px border border-white/10 bg-white/10">
           {OPEN_ROLES.map((r, i) => (
             <Reveal key={r.title} delay={i * 0.05}>
@@ -75,6 +87,16 @@ const WorkWithUs = () => (
         <Reveal className="flex items-center gap-4">
           <span className="w-11 h-11 border border-white/15 flex items-center justify-center text-signal"><Handshake size={20} strokeWidth={1.6} /></span>
           <h2 className="font-display text-3xl sm:text-4xl font-bold tracking-tight text-slate-50">Partnerships</h2>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <FramedImage
+            src={IMAGES.networkGlobe}
+            alt="Global network connections visualized across a map"
+            caption="[ Multi-Site Delivery — One Standard, Every Location ]"
+            ratio="aspect-[21/9]"
+            className="mt-10"
+            testid="partnerships-image"
+          />
         </Reveal>
         <div className="mt-12 grid md:grid-cols-3 gap-px bg-white/10 border border-white/10">
           {PARTNER_TYPES.map((p, i) => (

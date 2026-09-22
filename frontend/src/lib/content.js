@@ -1,3 +1,15 @@
+export const IMAGES = {
+  datacenterAisle: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1400&auto=format&fit=crop",
+  darkRacks: "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  serverRoom: "https://images.unsplash.com/photo-1785682231847-93265d8e633d?q=80&w=1200&auto=format&fit=crop",
+  patchCabling: "https://images.unsplash.com/photo-1744868562210-fffb7fa882d9?q=80&w=1200&auto=format&fit=crop",
+  datacenterCorridor: "https://images.unsplash.com/photo-1785682117346-4b114502e9b8?q=80&w=1200&auto=format&fit=crop",
+  controlRoom: "https://images.unsplash.com/photo-1782945217386-300f33f22069?q=80&w=1200&auto=format&fit=crop",
+  nocRoom: "https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  engineerMonitors: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200&auto=format&fit=crop",
+  networkGlobe: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop",
+};
+
 export const SERVICES = [
   {
     slug: "server-computing",
@@ -14,6 +26,7 @@ export const SERVICES = [
       "Capacity planning and lifecycle roadmaps",
     ],
     engagements: ["Server consolidation", "Virtualization environment build-out", "Storage & backup modernization"],
+    image: "serverRoom",
   },
   {
     slug: "network-connectivity",
@@ -30,6 +43,7 @@ export const SERVICES = [
       "Network documentation and topology maps",
     ],
     engagements: ["Multi-site network upgrades", "Office build-outs and relocations", "Wireless surveys and remediation"],
+    image: "patchCabling",
   },
   {
     slug: "data-center",
@@ -46,6 +60,7 @@ export const SERVICES = [
       "Structured cabling standards and labeling",
     ],
     engagements: ["Server room build-outs", "Data center refresh and consolidation", "Cabling remediation"],
+    image: "datacenterCorridor",
   },
   {
     slug: "security-resilience",
@@ -62,6 +77,7 @@ export const SERVICES = [
       "Recovery planning and resilience reviews",
     ],
     engagements: ["Firewall replacement programs", "Segmentation for compliance scope reduction", "Remote-access modernization"],
+    image: "controlRoom",
   },
   {
     slug: "managed-infrastructure",
@@ -78,6 +94,7 @@ export const SERVICES = [
       "Quarterly environment reviews",
     ],
     engagements: ["Managed server and network environments", "Co-managed infrastructure alongside internal IT", "Lifecycle and renewal management"],
+    image: "nocRoom",
   },
 ];
 

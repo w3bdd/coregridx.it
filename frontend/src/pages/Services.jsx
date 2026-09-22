@@ -1,7 +1,8 @@
 import { Server, Network, HardDrive, ShieldCheck, Activity, Check } from "lucide-react";
 import CTASection from "@/components/CTASection";
+import FramedImage from "@/components/FramedImage";
 import { Reveal, Eyebrow, MaskLine } from "@/components/Reveal";
-import { SERVICES } from "@/lib/content";
+import { SERVICES, IMAGES } from "@/lib/content";
 
 const ICONS = { Server, Network, HardDrive, ShieldCheck, Activity };
 
@@ -39,6 +40,14 @@ const Services = () => (
               <h2 className="mt-6 font-display text-3xl sm:text-4xl font-bold tracking-tight text-slate-50 leading-[1.12]">{s.title}</h2>
               <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-signal/70">[ {s.tag} ]</div>
               <p className="mt-6 text-slate-400 leading-relaxed">{s.blurb}</p>
+              <FramedImage
+                src={IMAGES[s.image]}
+                alt={s.title}
+                caption={s.tag}
+                ratio="aspect-[16/9]"
+                className="mt-8"
+                testid={`service-image-${s.slug}`}
+              />
             </Reveal>
             <div className="lg:col-span-7 grid sm:grid-cols-2 gap-8">
               <Reveal delay={0.1}>
