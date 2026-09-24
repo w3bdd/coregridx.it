@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>CoreGridX Technologies</title>
+        <script>
+            // SPA redirect for GitHub Pages: unknown paths land here and are rewritten
+            // as query strings that index.html decodes back into client-side routes.
+            // pathSegmentsToKeep = 1 assumes a project page (user.github.io/<repo>/).
+            // Set to 0 for a user/organization page (user.github.io).
+            var pathSegmentsToKeep = 1;
+            var l = window.location;
+            l.replace(
+                l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "") +
+                l.pathname.split("/").slice(0, 1 + pathSegmentsToKeep).join("/") + "/?/" +
+                l.pathname.slice(1).split("/").slice(pathSegmentsToKeep).join("/").replace(/&/g, "~and~") +
+                (l.search ? "&" + l.search.slice(1).replace(/&/g, "~and~") : "") +
+                l.hash
+            );
+        </script>
+    </head>
+    <body></body>
+</html>

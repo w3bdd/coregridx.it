@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Send } from "lucide-react";
 import { toast } from "sonner";
-import { api } from "@/lib/api";
+import { submitLead } from "@/lib/api";
 import { inputCls, Field, Honeypot, Select } from "./fields";
 
 const init = { name: "", email: "", company: "", phone: "", topic: "", message: "", website: "" };
@@ -24,7 +24,7 @@ const ContactForm = () => {
     if (Object.keys(er).length) return;
     setBusy(true);
     try {
-      await api.post("/leads/contact", data);
+      await submitLead("contact", data);
       setDone(true);
       toast.success("Message received. We respond within one business day.");
     } catch (err) {

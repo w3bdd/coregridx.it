@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CalendarClock } from "lucide-react";
 import { toast } from "sonner";
-import { api } from "@/lib/api";
+import { submitLead } from "@/lib/api";
 import { inputCls, Field, Honeypot, Select } from "./fields";
 
 const init = { name: "", email: "", company: "", role: "", phone: "", focus_area: "", timeframe: "", message: "", website: "" };
@@ -24,7 +24,7 @@ const ConsultationForm = () => {
     if (Object.keys(er).length) return;
     setBusy(true);
     try {
-      await api.post("/leads/consultation", data);
+      await submitLead("consultation", data);
       setDone(true);
       toast.success("Consultation request received. We confirm fit by email before scheduling.");
     } catch (err) {

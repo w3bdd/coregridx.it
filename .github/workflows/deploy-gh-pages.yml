@@ -1,0 +1,42 @@
+name: Deploy frontend to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build (static mode)
+        run: yarn build
+        env:
+          # Static mode: no backend on GitHub Pages. Forms post to an external endpoint.
+          # Add these two as repo Secrets (Settings -> Secrets and variables -> Actions).
+          # Web3Forms (free): endpoint https://api.web3forms.com/submit, key = your access key.
+          REACT_APP_BACKEND_URL: ""
+          REACT_APP_LEAD_ENDPOINT: ${{ secrets.REACT_APP_LEAD_ENDPOINT }}
+          REACT_APP_LEAD_KEY: ${{ secrets.REACT_APP_LEAD_KEY }}
+          REACT_APP_BASENAME: /${{ github.event.repository.name }}
+
+      - name: Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: frontend/build

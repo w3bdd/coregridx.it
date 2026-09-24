@@ -52,6 +52,19 @@ marquee, framer-motion, lenis smooth scroll, parallax).
 - Browser: homepage hero + mid sections, full 3-step quote form submit → success panel + toast
 - Email pipeline: 202 Accepted from integration proxy
 
+## Deployment support (2026-09-22)
+- Dual-mode lead submit (src/lib/api.js submitLead): full-stack mode posts to FastAPI;
+  static mode activates when REACT_APP_LEAD_ENDPOINT (+ optional REACT_APP_LEAD_KEY) are set
+  at build time — Web3Forms/Formspree/FormSubmit compatible, honeypot honored in both modes
+- GitHub Pages: public/404.html SPA redirect + decode script in index.html, package.json
+  homepage ".", REACT_APP_BASENAME support, workflow .github/workflows/deploy-gh-pages.yml
+  (auto-sets basename from repo name, reads form endpoint from repo secrets)
+- Capability PDF now a static asset (frontend/public/capability-statement.pdf) so the
+  download works on static hosting; backend /api/capability-statement.pdf kept for regen
+- Cleanup: removed dead src/App.css and src/constants/, added manifest.json + robots.txt,
+  .env.example for both tiers, full README with GH Pages + VPS (systemd/nginx) guides
+- Verified: yarn build passes, backend-mode form submit still works, static PDF serves
+
 ## Backlog
 - P0: Owner provides real ADMIN_EMAIL (and real phone/email for site-wide placeholders)
 - P1: Founder/leadership section on About (deferred — user skipped; needs real names/credentials)

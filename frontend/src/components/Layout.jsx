@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Grid2x2, Menu, X, ArrowUpRight, Phone, Mail, FileDown, Sun, Moon } from "lucide-react";
-import { CONTACT } from "@/lib/api";
+import { CONTACT, CAPABILITY_PDF_URL } from "@/lib/api";
 
 const ThemeToggle = () => {
   const [light, setLight] = useState(
@@ -176,7 +176,7 @@ const Footer = () => (
         </a>
         <a
           data-testid="cta-download-capability-pdf"
-          href={`${process.env.REACT_APP_BACKEND_URL}/api/capability-statement.pdf`}
+          href={CAPABILITY_PDF_URL}
           className="mt-6 inline-flex items-center gap-2 border border-white/15 px-4 py-2.5 text-xs font-mono uppercase tracking-[0.15em] text-slate-300 hover:border-signal/50 hover:text-signal transition-colors"
         >
           <FileDown size={14} /> Capability Statement

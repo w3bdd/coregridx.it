@@ -9,6 +9,7 @@ import CTASection from "@/components/CTASection";
 import FramedImage from "@/components/FramedImage";
 import { Reveal, MaskLine, Eyebrow } from "@/components/Reveal";
 import { SERVICES, SOLUTIONS, INDUSTRIES, IMAGES } from "@/lib/content";
+import { CAPABILITY_PDF_URL } from "@/lib/api";
 
 const ICONS = { Server, Network, HardDrive, ShieldCheck, Activity };
 
@@ -327,7 +328,7 @@ const Home = () => {
               </div>
               <a
                 data-testid="home-capability-pdf-button"
-                href={`${process.env.REACT_APP_BACKEND_URL}/api/capability-statement.pdf`}
+                href={CAPABILITY_PDF_URL}
                 className="shrink-0 inline-flex items-center gap-2.5 bg-signal text-void font-display font-semibold text-sm px-7 py-4 hover:bg-white transition-colors"
               >
                 <FileDown size={16} /> Download PDF

@@ -50,7 +50,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.REACT_APP_BASENAME || "/"}>
       <ScrollManager />
       <Layout>
         <Routes>

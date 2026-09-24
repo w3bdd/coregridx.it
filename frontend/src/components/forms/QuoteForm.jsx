@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowRight, Send } from "lucide-react";
 import { toast } from "sonner";
-import { api } from "@/lib/api";
+import { submitLead } from "@/lib/api";
 import { inputCls, Field, Honeypot, Select } from "./fields";
 
 const STEPS = ["Organization", "Project", "Contact"];
@@ -52,7 +52,7 @@ const QuoteForm = () => {
     if (!validate(2)) return;
     setBusy(true);
     try {
-      await api.post("/leads/quote", data);
+      await submitLead("quote", data);
       setDone(true);
       toast.success("Quote request received. An engineer will review your scope and respond within one business day.");
     } catch (err) {
