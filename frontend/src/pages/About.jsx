@@ -119,6 +119,50 @@ const About = () => (
       </div>
     </section>
 
+    <section className="border-b border-white/10 bg-panel/20">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 py-24 grid lg:grid-cols-12 gap-12" data-testid="founder-section">
+        <Reveal className="lg:col-span-4">
+          <Eyebrow>Founder</Eyebrow>
+          <div className="mt-8 border border-white/10 bg-void p-8">
+            <div className="w-20 h-20 border border-signal/40 flex items-center justify-center">
+              <span className="font-display text-2xl font-bold text-signal">AG</span>
+            </div>
+            <h2 className="mt-6 font-display text-2xl font-bold text-slate-50">Ansel Liam Galvan</h2>
+            <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-signal/70">
+              [ Founder & Principal Engineer ]
+            </div>
+            <div className="mt-6 space-y-2.5 font-mono text-[10px] uppercase tracking-[0.18em] text-slate-500">
+              <div className="flex items-center gap-2.5"><span className="w-1.5 h-1.5 bg-pulse inline-block" /> Founder-led delivery</div>
+              <div className="flex items-center gap-2.5"><span className="w-1.5 h-1.5 bg-pulse inline-block" /> Every proposal engineer-reviewed</div>
+            </div>
+          </div>
+        </Reveal>
+        <Reveal delay={0.1} className="lg:col-span-8">
+          <div className="space-y-6 text-slate-400 leading-relaxed text-base sm:text-lg">
+            <p>
+              CoreGridX began the way most infrastructure careers do — inside server rooms, on ladders,
+              and in change windows nobody else wanted. Ansel spent his early career keeping multi-site
+              environments alive: untangling undocumented networks, rebuilding servers under pressure,
+              and writing the runbooks that should have existed from day one.
+            </p>
+            <p>
+              The pattern he kept seeing was never bad technology — it was absent discipline. Projects
+              sold before they were scoped. Systems deployed without documentation. Security added after
+              the first incident. CoreGridX Technologies was founded to invert that order: engineering
+              first, scope before price, documentation as a deliverable.
+            </p>
+            <p className="text-slate-300 font-display text-lg sm:text-xl border-l-2 border-signal/50 pl-5">
+              "If we can't stand behind the handover, we don't take the project. That rule costs us
+              work sometimes. It's also the reason clients call back."
+            </p>
+            <p>
+              He still reviews every proposal personally — a habit the company has no intention of outgrowing.
+            </p>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+
     <CTASection title="Work with a team that says no." sub="If we are not the right fit for your project, we will tell you in the first conversation — and point you toward someone who is." />
   </div>
 );

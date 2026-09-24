@@ -65,6 +65,13 @@ marquee, framer-motion, lenis smooth scroll, parallax).
   .env.example for both tiers, full README with GH Pages + VPS (systemd/nginx) guides
 - Verified: yarn build passes, backend-mode form submit still works, static PDF serves
 
+## Real details added (2026-09-24)
+- Contact: +63 965 093 3555 / contact.coregridx@gmail.com — site-wide (CONTACT in api.js),
+  JSON-LD schema, capability PDF footer (regenerated static asset)
+- ADMIN_EMAIL = contact.coregridx@gmail.com → lead notifications verified delivering (202)
+- Founder story section on About: Ansel Liam Galvan, Founder & Principal Engineer,
+  AG monogram card (no photo supplied), 3-paragraph restrained narrative + pull quote
+
 ## Backlog
 - P0: Owner provides real ADMIN_EMAIL (and real phone/email for site-wide placeholders)
 - P1: Founder/leadership section on About (deferred — user skipped; needs real names/credentials)

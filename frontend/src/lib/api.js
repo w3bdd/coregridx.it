@@ -5,10 +5,10 @@ export const api = axios.create({
 });
 
 export const CONTACT = {
-  phone: "+1 (555) 013-4200",
-  phoneHref: "tel:+15550134200",
-  email: "hello@coregridx.com",
-  emailHref: "mailto:hello@coregridx.com",
+  phone: "+63 965 093 3555",
+  phoneHref: "tel:+639650933555",
+  email: "contact.coregridx@gmail.com",
+  emailHref: "mailto:contact.coregridx@gmail.com",
 };
 
 export const CAPABILITY_PDF_URL = `${process.env.PUBLIC_URL}/capability-statement.pdf`;

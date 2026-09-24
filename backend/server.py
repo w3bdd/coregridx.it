@@ -339,7 +339,7 @@ async def capability_statement():
     pdf.set_xy(16, 282)
     pdf.set_text_color(100, 116, 139)
     pdf.set_font("helvetica", "", 9)
-    pdf.cell(0, 5, "CoreGridX Technologies - Infrastructure Engineering  |  coregridx.com  |  hello@coregridx.com")
+    pdf.cell(0, 5, "CoreGridX Technologies - Infrastructure Engineering  |  contact.coregridx@gmail.com  |  +63 965 093 3555")
 
     return Response(
         content=bytes(pdf.output()),
