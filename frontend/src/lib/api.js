@@ -9,6 +9,8 @@ export const CONTACT = {
   phoneHref: "tel:+639650933555",
   email: "contact.coregridx@gmail.com",
   emailHref: "mailto:contact.coregridx@gmail.com",
+  whatsapp: "+63 965 093 3555",
+  whatsappHref: "https://wa.me/639650933555?text=Hi%20CoreGridX%20—%20I%27d%20like%20to%20discuss%20an%20infrastructure%20project.",
 };
 
 export const CAPABILITY_PDF_URL = `${process.env.PUBLIC_URL}/capability-statement.pdf`;

@@ -71,6 +71,8 @@ marquee, framer-motion, lenis smooth scroll, parallax).
 - ADMIN_EMAIL = contact.coregridx@gmail.com → lead notifications verified delivering (202)
 - Founder story section on About: Ansel Liam Galvan, Founder & Principal Engineer,
   AG monogram card (no photo supplied), 3-paragraph restrained narrative + pull quote
+- WhatsApp click-to-chat (wa.me/639650933555 with pre-filled intro message): floating
+  button site-wide (bottom-right), footer link, and a 4th contact card on /contact
 
 ## Backlog
 - P0: Owner provides real ADMIN_EMAIL (and real phone/email for site-wide placeholders)

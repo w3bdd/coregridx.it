@@ -4,6 +4,7 @@ import QuoteForm from "@/components/forms/QuoteForm";
 import ContactForm from "@/components/forms/ContactForm";
 import ConsultationForm from "@/components/forms/ConsultationForm";
 import { Reveal, Eyebrow, MaskLine } from "@/components/Reveal";
+import { WhatsAppIcon } from "@/components/Layout";
 import { CONTACT } from "@/lib/api";
 
 const TABS = [
@@ -15,6 +16,7 @@ const TABS = [
 const DIRECT = [
   { icon: Phone, label: "Call directly", value: CONTACT.phone, href: CONTACT.phoneHref, testid: "contact-phone-link" },
   { icon: Mail, label: "Email", value: CONTACT.email, href: CONTACT.emailHref, testid: "contact-email-link" },
+  { icon: WhatsAppIcon, label: "WhatsApp", value: CONTACT.whatsapp, href: CONTACT.whatsappHref, external: true, testid: "contact-whatsapp-link" },
   { icon: Timer, label: "Response standard", value: "Within one business day", testid: "contact-response-standard" },
 ];
 
@@ -38,17 +40,17 @@ const Contact = () => {
             </p>
           </Reveal>
           <Reveal delay={0.55}>
-            <div className="mt-12 grid sm:grid-cols-3 gap-px bg-white/10 border border-white/10 max-w-3xl">
+            <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 max-w-4xl">
               {DIRECT.map((d) => {
                 const inner = (
                   <>
-                    <d.icon size={16} className="text-signal" />
+                    <d.icon size={16} className={d.external ? "text-[#25D366]" : "text-signal"} />
                     <div className="mt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">{d.label}</div>
                     <div className="mt-1 text-sm font-medium text-slate-200">{d.value}</div>
                   </>
                 );
                 return d.href ? (
-                  <a key={d.label} href={d.href} data-testid={d.testid} className="bg-void p-6 hover:bg-panel transition-colors block">{inner}</a>
+                  <a key={d.label} href={d.href} {...(d.external ? { target: "_blank", rel: "noopener noreferrer" } : {})} data-testid={d.testid} className="bg-void p-6 hover:bg-panel transition-colors block">{inner}</a>
                 ) : (
                   <div key={d.label} data-testid={d.testid} className="bg-void p-6">{inner}</div>
                 );
