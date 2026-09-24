@@ -58,7 +58,11 @@ marquee, framer-motion, lenis smooth scroll, parallax).
   at build time — Web3Forms/Formspree/FormSubmit compatible, honeypot honored in both modes
 - GitHub Pages: public/404.html SPA redirect + decode script in index.html, package.json
   homepage ".", REACT_APP_BASENAME support, workflow .github/workflows/deploy-gh-pages.yml
-  (auto-sets basename from repo name, reads form endpoint from repo secrets)
+  (auto-sets basename from repo name, reads form endpoint from repo secrets).
+  2026-09-24 fix: switched from peaceiris/actions-gh-pages (single job, no URL output,
+  Pages not auto-enabled) to official actions — configure-pages@v5 + upload-pages-artifact@v3
+  in a "Build" job, deploy-pages@v4 in a separate "Deploy" job bound to the github-pages
+  environment, which outputs the live page URL and shows as two boxes in the Actions UI
 - Capability PDF now a static asset (frontend/public/capability-statement.pdf) so the
   download works on static hosting; backend /api/capability-statement.pdf kept for regen
 - Cleanup: removed dead src/App.css and src/constants/, added manifest.json + robots.txt,

@@ -6,10 +6,17 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
-  build-deploy:
+  build:
+    name: Build
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -33,10 +40,25 @@ jobs:
           REACT_APP_BACKEND_URL: ""
           REACT_APP_LEAD_ENDPOINT: ${{ secrets.REACT_APP_LEAD_ENDPOINT }}
           REACT_APP_LEAD_KEY: ${{ secrets.REACT_APP_LEAD_KEY }}
+          # Project page subpath. For a user/org page (<user>.github.io repo), set to "".
           REACT_APP_BASENAME: /${{ github.event.repository.name }}
 
-      - name: Deploy to gh-pages branch
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: frontend/build
+          path: frontend/build
+
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

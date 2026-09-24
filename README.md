@@ -62,13 +62,16 @@ is set at build time.
 2. In your GitHub repo: **Settings → Secrets and variables → Actions**, add:
    - `REACT_APP_LEAD_ENDPOINT` = `https://api.web3forms.com/submit`
    - `REACT_APP_LEAD_KEY` = your Web3Forms access key
-3. Push to `main`. The workflow in `.github/workflows/deploy-gh-pages.yml`
-   builds the site and publishes it to the `gh-pages` branch.
-4. **Settings → Pages** → source: `gh-pages` branch, `/ (root)`.
-5. Site goes live at `https://<user>.github.io/<repo>/`. Deep links work via
-   the included `public/404.html` SPA redirect. For a user/organization page
-   (`<user>.github.io` with no repo subpath), edit `public/404.html` and set
-   `pathSegmentsToKeep = 0`, and leave `REACT_APP_BASENAME` empty in the workflow.
+3. Push to `main`. The workflow in `.github/workflows/deploy-gh-pages.yml` runs as two
+   separate jobs — **Build** (compiles the static site) and **Deploy** (publishes it via
+   GitHub's official Pages actions). The first run auto-enables Pages; if it doesn't,
+   set **Settings → Pages → Source: GitHub Actions** once.
+4. The live URL appears on the workflow run page (the **Deploy** job shows
+   `https://<user>.github.io/<repo>/` as its environment URL) and under
+   **Deployments → github-pages** in the repo sidebar.
+5. Deep links work via the included `public/404.html` SPA redirect. For a user/organization
+   page (`<user>.github.io` with no repo subpath), edit `public/404.html` and set
+   `pathSegmentsToKeep = 0`, and set `REACT_APP_BASENAME: ""` in the workflow.
 
 The capability statement PDF is a static asset (`public/capability-statement.pdf`),
 so the download works on GitHub Pages too. Regenerate it anytime from a running
